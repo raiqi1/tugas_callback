@@ -1,26 +1,10 @@
 
-// axios.get('https://jsonplaceholder.typicode.com/users').then(res => {
-//   document.getElementById('data').innerHTML = render(res.data);
-// })
-fetch('https://jsonplaceholder.typicode.com/users')
-  .then(res => res.json())
+const data = fetch('https://jsonplaceholder.typicode.com/users');
+data
+  .then(function(res){ return res.json()})
   .then(res => {
-  document.getElementById('data').innerHTML = render(res)
-});
-// const table = document.getElementById('data');
-// table.innerHTML = message('loading...');
-// const data = fetch('https://jsonplaceholder.typicode.com/users');
-// data
-//   .then(function(res){ return res.json()})
-//   .then(res => {
-//       table.innerHTML = render(res)
-//   })
-//   .catch(err => {
-//       table.innerHTML = message(err.message)
-//   })
-//   .finally(() => {
-      
-//   });
+    document.getElementById('data').innerHTML = render(res)
+  })
 
 
 function render(result) {
